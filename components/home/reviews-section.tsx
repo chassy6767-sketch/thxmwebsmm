@@ -161,7 +161,7 @@ export const defaultReviews = [
     id: "9",
     username: "sara.xo_",
     rating: 5,
-    review_text: "easy trade vouch",
+    review_text: "ez trade vouch",
     trade_category: "Roblox",
     trade_value: "\u20AC60",
     created_at: "2026-05-19",
@@ -181,7 +181,7 @@ export const defaultReviews = [
     id: "11",
     username: "z3r0.mp3",
     rating: 5,
-    review_text: "nice workin w him, quick and easy.",
+    review_text: "nice workin w him, quick and ez.",
     trade_category: "Roblox",
     trade_value: "\u20AC110",
     created_at: "2026-05-12",
@@ -477,7 +477,7 @@ export function ReviewsSection() {
               : r.profiles?.username?.toLowerCase() === "jxsh.wav"
               ? "smooth transaction vouch"
               : r.profiles?.username?.toLowerCase() === "sara.xo_"
-              ? "easy trade vouch"
+              ? "ez trade vouch"
               : r.profiles?.username?.toLowerCase() === "kenji.9k"
               ? "best €10 spent"
               : r.review_text,
