@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Shield, ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { BrandLogo } from "@/components/brand-logo";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -42,8 +43,7 @@ export default function LoginPage() {
       >
         <div className="text-center mb-10">
           <Link href="/" className="inline-flex items-center gap-2 mb-8">
-            <Shield className="w-6 h-6 text-white/60" />
-            <span className="text-sm font-medium text-white/60">THXM</span>
+            <BrandLogo size="sm" />
           </Link>
           <h1 className="text-2xl font-bold tracking-tight mb-2">
             Welcome back

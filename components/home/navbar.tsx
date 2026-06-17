@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Menu, X, User } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "@/components/providers/supabase-provider";
 import { supabase } from "@/lib/supabase";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,11 +36,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative">
-            <Shield className="w-7 h-7 text-white transition-transform group-hover:scale-110" />
-            <div className="absolute inset-0 bg-white/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
-          </div>
-          <span className="text-lg font-semibold tracking-tight">THXM</span>
+          <BrandLogo size="md" className="transition-transform group-hover:scale-[1.02]" />
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

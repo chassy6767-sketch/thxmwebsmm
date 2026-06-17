@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Shield, Mail, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 
 export default function VerifyEmailPage() {
   return (
@@ -14,8 +15,7 @@ export default function VerifyEmailPage() {
         className="w-full max-w-sm text-center"
       >
         <Link href="/" className="inline-flex items-center gap-2 mb-8">
-          <Shield className="w-6 h-6 text-white/60" />
-          <span className="text-sm font-medium text-white/60">THXM</span>
+          <BrandLogo size="sm" />
         </Link>
 
         <div className="w-14 h-14 rounded-full bg-white/[0.04] border border-white/[0.08] flex items-center justify-center mx-auto mb-6">

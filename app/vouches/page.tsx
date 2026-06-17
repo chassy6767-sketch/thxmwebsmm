@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import { defaultReviews } from "@/components/home/reviews-section";
+import { BrandLogo } from "@/components/brand-logo";
 
 type Vouch = {
   id: string;
@@ -81,8 +82,7 @@ export default function VouchesPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/[0.04]">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-white/40" />
-            <span className="text-sm font-medium text-white/40">THXM</span>
+            <BrandLogo size="sm" />
           </Link>
           <Link
             href="/"

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useAuth } from "@/components/providers/supabase-provider";
 import { supabase, type Purchase, type Review, type Profile } from "@/lib/supabase";
+import { BrandLogo } from "@/components/brand-logo";
 import { useRouter } from "next/navigation";
 import {
   Shield,
@@ -156,8 +157,7 @@ export default function DashboardPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#050505]/80 backdrop-blur-xl border-b border-white/[0.04]">
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <Shield className="w-5 h-5 text-white/40" />
-            <span className="text-sm font-medium text-white/40">THXM</span>
+            <BrandLogo size="sm" />
           </Link>
           <div className="flex items-center gap-4">
             <span className="text-xs text-white/30">{profile?.username}</span>
