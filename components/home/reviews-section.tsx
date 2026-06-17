@@ -350,7 +350,7 @@ function ReviewCard({
                 href={cacheBustAsset(review.vouch_image) as string}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 block w-full max-w-[220px] overflow-hidden rounded-xl border border-white/[0.06] bg-black/20 transition-transform hover:scale-[1.01]"
+                className="mt-3 block w-full max-w-[240px] overflow-hidden rounded-xl border border-white/[0.12] bg-black p-2 transition-transform hover:scale-[1.01]"
                 aria-label={`Open ${review.username} vouch image`}
               >
                 <Image
@@ -358,8 +358,8 @@ function ReviewCard({
                   alt={`${review.username} vouch`}
                   width={640}
                   height={360}
-                  className="h-auto w-full object-cover"
-                  sizes="(max-width: 768px) 70vw, 220px"
+                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 768px) 70vw, 240px"
                 />
               </Link>
             )}

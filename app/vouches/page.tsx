@@ -290,14 +290,14 @@ export default function VouchesPage() {
                   href={cacheBustAsset(vouch.vouch_image) as string}
                   target="_blank"
                   rel="noreferrer"
-                  className="relative mb-3 block w-full overflow-hidden rounded-xl border border-white/[0.06] bg-black/20 aspect-[16/10] sm:aspect-[16/9] transition-transform hover:scale-[1.01]"
+                    className="relative mb-3 block w-full overflow-hidden rounded-xl border border-white/[0.12] bg-black p-2 aspect-[16/10] sm:aspect-[16/9] transition-transform hover:scale-[1.01]"
                   aria-label={`Open ${vouch.username} vouch image`}
                 >
                   <Image
                     src={cacheBustAsset(vouch.vouch_image) as string}
                     alt={`${vouch.username} vouch`}
                     fill
-                    className="object-cover"
+                      className="object-contain"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </Link>
