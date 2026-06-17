@@ -57,6 +57,8 @@ export default function VouchesPage() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    let channel: any = null;
+
     const fetchVouches = async () => {
       const { data } = await supabase
         .from("reviews")
@@ -158,7 +160,25 @@ export default function VouchesPage() {
         setVouches(shuffle(mapped));
       }
     };
-    fetchVouches();
+
+    const syncVouches = async () => {
+      await fetchVouches();
+      const liveChannel: any = supabase.channel("reviews-live-vouches");
+      liveChannel
+        .on("postgres_changes", { event: "*", schema: "public", table: "reviews" }, () => {
+          fetchVouches();
+        })
+        .subscribe();
+      channel = liveChannel;
+    };
+
+    syncVouches();
+
+    return () => {
+      if (channel) {
+        supabase.removeChannel(channel);
+      }
+    };
   }, []);
 
   const filtered = vouches.filter((v) => {
@@ -200,12 +220,16 @@ export default function VouchesPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            Live updates
+          </div>
           <div className="mb-6 h-px w-24 bg-gradient-to-r from-[#ff8c00] via-[#ffb15c] to-transparent" />
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-2">
             Vouches
           </h1>
           <p className="text-sm text-white/35 mb-10">
-            Real vouches, kept low-key. No fake reviews.
+            Real verified vouches, kept low-key. No fake reviews.
           </p>
         </motion.div>
 

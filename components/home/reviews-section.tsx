@@ -502,6 +502,8 @@ export function ReviewsSection() {
   const isInView = useInView(scrollRef, { once: true });
 
   useEffect(() => {
+    let channel: any = null;
+
     const fetchReviews = async () => {
       const { data } = await supabase
         .from("reviews")
@@ -550,8 +552,7 @@ export function ReviewsSection() {
               ? "solid legit vouch"
               : r.profiles?.username?.toLowerCase() === "slipknot113"
               ? "fast and good"
-              :
-            r.profiles?.username?.toLowerCase() === "neoxx"
+              : r.profiles?.username?.toLowerCase() === "neoxx"
               ? "vouch thxm went smooth"
               : r.profiles?.username?.toLowerCase() === "ayano80"
               ? "nice work pretty chill"
@@ -588,21 +589,40 @@ export function ReviewsSection() {
               : r.profiles?.username?.toLowerCase() === "snakiesizedendie23"
               ? "/snacksizedvouch.png"
               : r.profiles?.username?.toLowerCase() === "lunaisthegoat"
-                ? "/lunavouch.png"
+              ? "/lunavouch.png"
               : r.profiles?.username?.toLowerCase() === "zaynnth"
-                ? "/zythvouch.png"
+              ? "/zythvouch.png"
               : r.profiles?.username?.toLowerCase() === "crazyytci"
-                ? "/crazticvouch.png"
+              ? "/crazticvouch.png"
               : r.profiles?.username?.toLowerCase() === "cretimm!!"
-                ? "/cretimvouch.png"
+              ? "/cretimvouch.png"
               : r.profiles?.username?.toLowerCase() === "slipknot113"
-                ? "/slipknot114.png"
+              ? "/slipknot114.png"
               : undefined,
         }));
+
         setReviews(shuffle(mapped));
       }
     };
-    fetchReviews();
+
+    const syncReviews = async () => {
+      await fetchReviews();
+      const liveChannel: any = supabase.channel("reviews-live-home");
+      liveChannel
+        .on("postgres_changes", { event: "*", schema: "public", table: "reviews" }, () => {
+          fetchReviews();
+        })
+        .subscribe();
+      channel = liveChannel;
+    };
+
+    syncReviews();
+
+    return () => {
+      if (channel) {
+        supabase.removeChannel(channel);
+      }
+    };
   }, []);
 
   const displayReviews = reviews.slice(0, 8);
@@ -620,13 +640,16 @@ export function ReviewsSection() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Vouches
           </h2>
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-300">
+            <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            Live updates
+          </div>
           <p className="text-white/40 max-w-md mx-auto">
-            Low-key vouches from real customers who kept it simple with THXM.
+            Low-key vouches from verified customers only.
           </p>
         </motion.div>
       </div>
 
-      {/* Horizontal scroll */}
       <div className="relative">
         <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#050505] to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#050505] to-transparent z-10 pointer-events-none" />
@@ -655,7 +678,6 @@ export function ReviewsSection() {
         </motion.div>
       </div>
 
-      {/* View all link */}
       <div className="text-center mt-10">
         <Link
           href="/vouches"
