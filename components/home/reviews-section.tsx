@@ -467,7 +467,7 @@ export function ReviewsSection() {
   const displayReviews = reviews.slice(0, 8);
 
   return (
-    <section id="reviews" className="relative py-32 overflow-hidden">
+    <section id="reviews" className="relative py-20 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12">
         <motion.div
           className="text-center"

@@ -157,7 +157,7 @@ export default function VouchesPage() {
         </div>
       </nav>
 
-      <div ref={ref} className="max-w-6xl mx-auto px-6 pt-24 pb-16">
+      <div ref={ref} className="max-w-6xl mx-auto px-6 pt-16 md:pt-24 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
