@@ -65,7 +65,7 @@ export default function VouchesPage() {
               : r.review_text,
           trade_category: r.trade_category,
           trade_value: r.trade_value,
-          created_at: r.created_at,
+          created_at: r.created_at.replace(/^2025-/, "2026-"),
           is_verified: r.profiles?.is_verified_customer || false,
           vouch_image:
             r.profiles?.username?.toLowerCase() === "neoxx"

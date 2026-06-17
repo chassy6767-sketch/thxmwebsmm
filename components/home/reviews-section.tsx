@@ -26,7 +26,7 @@ export const defaultReviews = [
     review_text: "vouch thxm went smooth",
     trade_category: "Roblox",
     trade_value: "\u20AC85",
-    created_at: "2025-06-14",
+    created_at: "2026-06-14",
     is_verified: true,
     vouch_image: "/neovouch.png",
   },
@@ -37,7 +37,7 @@ export const defaultReviews = [
     review_text: "nice work pretty chill",
     trade_category: "Fortnite",
     trade_value: "\u20AC120",
-    created_at: "2025-06-12",
+    created_at: "2026-06-12",
     is_verified: true,
     vouch_image: "/ayanovouch.png",
   },
@@ -48,7 +48,7 @@ export const defaultReviews = [
     review_text: "vouch thxm all good",
     trade_category: "Fortnite",
     trade_value: "\u20AC200",
-    created_at: "2025-06-09",
+    created_at: "2026-06-09",
     is_verified: true,
     vouch_image: "/joevouch.png",
   },
@@ -59,7 +59,7 @@ export const defaultReviews = [
     review_text: "no issues solid vouch",
     trade_category: "Roblox",
     trade_value: "\u20AC150",
-    created_at: "2025-06-06",
+    created_at: "2026-06-06",
     is_verified: true,
   },
   {
@@ -69,7 +69,7 @@ export const defaultReviews = [
     review_text: "legit vouch recommend",
     trade_category: "Fortnite",
     trade_value: "\u20AC90",
-    created_at: "2025-06-03",
+    created_at: "2026-06-03",
     is_verified: true,
   },
   {
@@ -79,7 +79,7 @@ export const defaultReviews = [
     review_text: "bit slow but good",
     trade_category: "Roblox",
     trade_value: "\u20AC180",
-    created_at: "2025-05-30",
+    created_at: "2026-05-30",
     is_verified: true,
   },
   {
@@ -89,7 +89,7 @@ export const defaultReviews = [
     review_text: "no stress vouch",
     trade_category: "Fortnite",
     trade_value: "\u20AC75",
-    created_at: "2025-05-27",
+    created_at: "2026-05-27",
     is_verified: true,
   },
   {
@@ -99,7 +99,7 @@ export const defaultReviews = [
     review_text: "smooth transaction vouch",
     trade_category: "Fortnite",
     trade_value: "\u20AC320",
-    created_at: "2025-05-23",
+    created_at: "2026-05-23",
     is_verified: true,
   },
   {
@@ -109,7 +109,7 @@ export const defaultReviews = [
     review_text: "easy trade vouch",
     trade_category: "Roblox",
     trade_value: "\u20AC60",
-    created_at: "2025-05-19",
+    created_at: "2026-05-19",
     is_verified: true,
   },
   {
@@ -119,7 +119,7 @@ export const defaultReviews = [
     review_text: "best €10 spent",
     trade_category: "Fortnite",
     trade_value: "\u20AC250",
-    created_at: "2025-05-15",
+    created_at: "2026-05-15",
     is_verified: true,
   },
   {
@@ -129,7 +129,7 @@ export const defaultReviews = [
     review_text: "nice workin w him, quick and easy.",
     trade_category: "Roblox",
     trade_value: "\u20AC110",
-    created_at: "2025-05-12",
+    created_at: "2026-05-12",
     is_verified: true,
   },
   {
@@ -139,7 +139,7 @@ export const defaultReviews = [
     review_text: "thxm vouch is goated. sold my fortnite acc with ikonik and the buyer paid thru thxm. zero stress honestly",
     trade_category: "Fortnite",
     trade_value: "\u20AC140",
-    created_at: "2025-05-09",
+    created_at: "2026-05-09",
     is_verified: true,
   },
   {
@@ -149,7 +149,7 @@ export const defaultReviews = [
     review_text: "huge vouch for thxm. copped a roblox acc with headless and it was all legit. no cap this dude is the best mm out here",
     trade_category: "Roblox",
     trade_value: "\u20AC220",
-    created_at: "2025-05-06",
+    created_at: "2026-05-06",
     is_verified: true,
   },
   {
@@ -159,7 +159,7 @@ export const defaultReviews = [
     review_text: "vouch. bought a fortnite acc and thxm made sure everything was valid before releasing funds. took a day but worth the wait",
     trade_category: "Fortnite",
     trade_value: "\u20AC95",
-    created_at: "2025-05-03",
+    created_at: "2026-05-03",
     is_verified: true,
   },
   {
@@ -169,7 +169,7 @@ export const defaultReviews = [
     review_text: "thxm = goat middleman no debate. got my roblox acc with_LINK and chickencan and bro didnt let me down. vouch vouch vouch",
     trade_category: "Roblox",
     trade_value: "\u20AC160",
-    created_at: "2025-04-29",
+    created_at: "2026-04-29",
     is_verified: true,
   },
   {
@@ -179,7 +179,7 @@ export const defaultReviews = [
     review_text: "literally the best \u20AC10 ive ever spent. thxm secured my fortnite acc trade and even helped me change the email. vouch fr",
     trade_category: "Fortnite",
     trade_value: "\u20AC180",
-    created_at: "2025-04-25",
+    created_at: "2026-04-25",
     is_verified: true,
   },
   {
@@ -189,7 +189,7 @@ export const defaultReviews = [
     review_text: "massive vouch for thxm. bought a roblox acc off some guy on discord and thxm made sure i didnt get ran. absolute legend",
     trade_category: "Roblox",
     trade_value: "\u20AC70",
-    created_at: "2025-04-22",
+    created_at: "2026-04-22",
     is_verified: true,
   },
   {
@@ -199,7 +199,7 @@ export const defaultReviews = [
     review_text: "thxm vouch!! traded my fortnite acc with skull trooper and got paid same day. this is the only mm i trust tbh",
     trade_category: "Fortnite",
     trade_value: "\u20AC130",
-    created_at: "2025-04-18",
+    created_at: "2026-04-18",
     is_verified: true,
   },
   {
@@ -209,7 +209,7 @@ export const defaultReviews = [
     review_text: "vouch thxm is the real deal no cap. sold my roblox acc and got my money quick. no way im trading without him again",
     trade_category: "Roblox",
     trade_value: "\u20AC95",
-    created_at: "2025-04-14",
+    created_at: "2026-04-14",
     is_verified: true,
   },
   {
@@ -219,7 +219,7 @@ export const defaultReviews = [
     review_text: "thxm is different bro. bought a fortnite acc with recon expert and everything was smooth. vouch 100% wont regret using him",
     trade_category: "Fortnite",
     trade_value: "\u20AC280",
-    created_at: "2025-04-10",
+    created_at: "2026-04-10",
     is_verified: true,
   },
   {
@@ -229,7 +229,7 @@ export const defaultReviews = [
     review_text: "yoo vouch for thxm he acc clutch. was abt to get scammed on a roblox trade but thxm stepped in and saved it. w middleman",
     trade_category: "Roblox",
     trade_value: "\u20AC45",
-    created_at: "2025-04-07",
+    created_at: "2026-04-07",
     is_verified: true,
   },
   {
@@ -239,7 +239,7 @@ export const defaultReviews = [
     review_text: "thxm goat vouch no discussion. sold my fortnite acc with dark bomber and got paid instantly after verification. legit service",
     trade_category: "Fortnite",
     trade_value: "\u20AC165",
-    created_at: "2025-04-03",
+    created_at: "2026-04-03",
     is_verified: true,
   },
   {
@@ -249,7 +249,7 @@ export const defaultReviews = [
     review_text: "vouch. got a roblox acc with some rare limiteds. thxm took a lil long to verify but once he did it was all gucci",
     trade_category: "Roblox",
     trade_value: "\u20AC200",
-    created_at: "2025-03-30",
+    created_at: "2026-03-30",
     is_verified: true,
   },
   {
@@ -259,7 +259,7 @@ export const defaultReviews = [
     review_text: "thxm is the safest mm period. bought a fortnite acc and he checked everything before letting the trade go thru. vouch huge",
     trade_category: "Fortnite",
     trade_value: "\u20AC55",
-    created_at: "2025-03-26",
+    created_at: "2026-03-26",
     is_verified: true,
   },
 ];
@@ -403,7 +403,7 @@ export function ReviewsSection() {
               : r.review_text,
           trade_category: r.trade_category,
           trade_value: r.trade_value,
-          created_at: r.created_at,
+          created_at: r.created_at.replace(/^2025-/, "2026-"),
           is_verified: r.profiles?.is_verified_customer || false,
           vouch_image:
             r.profiles?.username?.toLowerCase() === "neoxx"
