@@ -74,7 +74,7 @@ html {
 }
 
 ::selection {
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(255, 140, 0, 0.22);
   color: white;
 }
 
@@ -127,14 +127,14 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #000 0%, #333 50%, #000 100%);
+  background: linear-gradient(135deg, #ffb15c 0%, #ff8c00 50%, #ffb15c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .dark .gradient-text {
-  background: linear-gradient(135deg, #fff 0%, #999 50%, #fff 100%);
+  background: linear-gradient(135deg, #ffd39b 0%, #ff8c00 50%, #ffd39b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -159,9 +159,9 @@ html {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
+  background: rgba(255, 140, 0, 0.22);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 140, 0, 0.38);
 }

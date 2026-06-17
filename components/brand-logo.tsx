@@ -18,7 +18,7 @@ export function BrandLogo({ size = "md", className = "", ...props }: BrandLogoPr
       {...props}
     >
       <span className="text-[#3d4650]">th</span>
-      <span className="text-[#ff9800]">x</span>
+      <span className="text-[#ff8c00]">x</span>
       <span className="text-[#3d4650]">m</span>
     </span>
   );

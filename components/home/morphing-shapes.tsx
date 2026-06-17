@@ -49,7 +49,7 @@ export function FloatingDot({
 }) {
   return (
     <motion.div
-      className="absolute rounded-full bg-white/10"
+      className="absolute rounded-full bg-[#ff8c00]/10"
       style={{
         left: x,
         top: y,
@@ -72,7 +72,7 @@ export function FloatingDot({
 
 export function GradientOrb({
   className = "",
-  colors = ["#222", "#444", "#111"],
+  colors = ["rgba(255,140,0,0.16)", "rgba(255,140,0,0.08)", "transparent"],
 }: {
   className?: string;
   colors?: string[];
