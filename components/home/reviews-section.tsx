@@ -20,6 +20,61 @@ export const defaultReviews = [
     vouch_image: "/snacksizedvouch.png",
   },
   {
+    id: "26",
+    username: "daylightss",
+    rating: 5,
+    review_text: "vouch — fast, friendly, secure, highly recommend",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-20",
+    is_verified: true,
+    vouch_image: "/daylightvouch.png",
+  },
+  {
+    id: "27",
+    username: "raketss283",
+    rating: 5,
+    review_text: "vouch smooth trade very reliable",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-18",
+    is_verified: true,
+    vouch_image: "/racketpingvouch.png",
+  },
+  {
+    id: "28",
+    username: "bokemonji11",
+    rating: 5,
+    review_text: "vouch quick and safe",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-16",
+    is_verified: true,
+    vouch_image: "/bokeoyaji.png",
+  },
+  {
+    id: "29",
+    username: "joshuaaxx",
+    rating: 5,
+    review_text: "vouch smooth transaction thanks man",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-14",
+    is_verified: true,
+    vouch_image: "/jxshvouch.png",
+  },
+  {
+    id: "30",
+    username: "rommiiuwu",
+    rating: 5,
+    review_text: "vouch, legit",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-12",
+    is_verified: true,
+    vouch_image: "/romsivouch.png",
+  },
+  {
     id: "1",
     username: "neoxx",
     rating: 5,
@@ -75,7 +130,7 @@ export const defaultReviews = [
   {
     id: "6",
     username: "_renzo.7",
-    rating: 4,
+    rating: 3,
     review_text: "bit slow but good",
     trade_category: "Roblox",
     trade_value: "\u20AC180",
@@ -392,6 +447,17 @@ export function ReviewsSection() {
           username: r.profiles?.username || "user",
           rating: r.rating,
           review_text:
+            r.profiles?.username?.toLowerCase() === "daylightss"
+              ? "vouch — fast, friendly, secure, highly recommend"
+              : r.profiles?.username?.toLowerCase() === "raketss283"
+              ? "vouch smooth trade very reliable"
+              : r.profiles?.username?.toLowerCase() === "bokemonji11"
+              ? "vouch quick and safe"
+              : r.profiles?.username?.toLowerCase() === "joshuaaxx"
+              ? "vouch smooth transaction thanks man"
+              : r.profiles?.username?.toLowerCase() === "rommiiuwu"
+              ? "vouch, legit"
+              :
             r.profiles?.username?.toLowerCase() === "neoxx"
               ? "vouch thxm went smooth"
               : r.profiles?.username?.toLowerCase() === "ayano80"

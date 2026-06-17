@@ -56,6 +56,17 @@ export default function VouchesPage() {
           username: r.profiles?.username || "user",
           rating: r.rating,
           review_text:
+            r.profiles?.username?.toLowerCase() === "daylightss"
+              ? "vouch — fast, friendly, secure, highly recommend"
+              : r.profiles?.username?.toLowerCase() === "raketss283"
+              ? "vouch smooth trade very reliable"
+              : r.profiles?.username?.toLowerCase() === "bokemonji11"
+              ? "vouch quick and safe"
+              : r.profiles?.username?.toLowerCase() === "joshuaaxx"
+              ? "vouch smooth transaction thanks man"
+              : r.profiles?.username?.toLowerCase() === "rommiiuwu"
+              ? "vouch, legit"
+              :
             r.profiles?.username?.toLowerCase() === "neoxx"
               ? "vouch thxm went smooth"
               : r.profiles?.username?.toLowerCase() === "ayano80"
@@ -88,7 +99,17 @@ export default function VouchesPage() {
                 ? "/ayanovouch.png"
                 : r.profiles?.username?.toLowerCase() === "joetracksit34"
                   ? "/joevouch.png"
-                  : undefined,
+                  : r.profiles?.username?.toLowerCase() === "daylightss"
+                    ? "/daylightvouch.png"
+                    : r.profiles?.username?.toLowerCase() === "raketss283"
+                      ? "/racketpingvouch.png"
+                      : r.profiles?.username?.toLowerCase() === "bokemonji11"
+                        ? "/bokeoyaji.png"
+                        : r.profiles?.username?.toLowerCase() === "joshuaaxx"
+                          ? "/jxshvouch.png"
+                          : r.profiles?.username?.toLowerCase() === "rommiiuwu"
+                            ? "/romsivouch.png"
+                            : undefined,
         }));
         setVouches(shuffle(mapped));
       }
