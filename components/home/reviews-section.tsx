@@ -301,6 +301,11 @@ function mixReviews<T extends { username: string }>(items: T[]) {
   });
 }
 
+function cacheBustAsset(src?: string | null) {
+  if (!src) return src;
+  return `${src}?v=20260617`;
+}
+
 function ReviewCard({
   review,
 }: {
@@ -342,14 +347,14 @@ function ReviewCard({
             </span>
             {review.vouch_image && (
               <Link
-                href={review.vouch_image}
+                href={cacheBustAsset(review.vouch_image) as string}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 block w-full max-w-[220px] overflow-hidden rounded-xl border border-white/[0.06] bg-black/20 transition-transform hover:scale-[1.01]"
                 aria-label={`Open ${review.username} vouch image`}
               >
                 <Image
-                  src={review.vouch_image}
+                  src={cacheBustAsset(review.vouch_image) as string}
                   alt={`${review.username} vouch`}
                   width={640}
                   height={360}
