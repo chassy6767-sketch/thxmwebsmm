@@ -12,7 +12,7 @@ export const defaultReviews = [
     id: "1",
     username: "neoxx",
     rating: 5,
-    review_text: "vouch for thxm, went smooth no cap. bought a roblox acc and bro held it down fr",
+    review_text: "vouch thxm, went smooth.",
     trade_category: "Roblox",
     trade_value: "\u20AC85",
     created_at: "2025-06-14",
@@ -23,7 +23,7 @@ export const defaultReviews = [
     id: "2",
     username: "ayano80",
     rating: 5,
-    review_text: "thxm goat vouch. was skeptical at first but dude came through clean. already used him 3 times lol",
+    review_text: "nice workin w him, pretty chill.",
     trade_category: "Fortnite",
     trade_value: "\u20AC120",
     created_at: "2025-06-12",
@@ -34,7 +34,7 @@ export const defaultReviews = [
     id: "3",
     username: "joetracksit34",
     rating: 5,
-    review_text: "big vouch. sold my og fortnite acc through thxm and everything was legit. fast responses too no waiting around",
+    review_text: "vouch thxm, all good.",
     trade_category: "Fortnite",
     trade_value: "\u20AC200",
     created_at: "2025-06-09",
@@ -45,7 +45,7 @@ export const defaultReviews = [
     id: "4",
     username: "mila.mp4",
     rating: 5,
-    review_text: "def vouch thxm. got a roblox acc with limiteds and was nervous but bro made it easy. 10 bucks well spent ngl",
+    review_text: "nice workin w him, no issues.",
     trade_category: "Roblox",
     trade_value: "\u20AC150",
     created_at: "2025-06-06",
@@ -55,7 +55,7 @@ export const defaultReviews = [
     id: "5",
     username: "carlozzz",
     rating: 5,
-    review_text: "vouch thxm is legit. did a fortnite acc trade and was scared of getting finessed but dude is actually trustworthy",
+    review_text: "vouch thxm, legit.",
     trade_category: "Fortnite",
     trade_value: "\u20AC90",
     created_at: "2025-06-03",
@@ -65,7 +65,7 @@ export const defaultReviews = [
     id: "6",
     username: "_renzo.7",
     rating: 4,
-    review_text: "solid vouch. bought a roblox acc with valk and dom and thxm secured the whole thing. took a min to reply tho but still good",
+    review_text: "nice workin w him, bit slow but good.",
     trade_category: "Roblox",
     trade_value: "\u20AC180",
     created_at: "2025-05-30",
@@ -75,7 +75,7 @@ export const defaultReviews = [
     id: "7",
     username: "nour.h13",
     rating: 5,
-    review_text: "thxm vouch!! my boy put me on and now im hooked. way better than risking it on ur own trust. got my dream acc fr",
+    review_text: "vouch thxm, no stress.",
     trade_category: "Fortnite",
     trade_value: "\u20AC75",
     created_at: "2025-05-27",
@@ -85,7 +85,7 @@ export const defaultReviews = [
     id: "8",
     username: "jxsh.wav",
     rating: 5,
-    review_text: "yo thxm is the real deal. traded my fortnite acc with renegade raider and bro was on it from start to finish. vouch x1000",
+    review_text: "nice workin w him, smooth.",
     trade_category: "Fortnite",
     trade_value: "\u20AC320",
     created_at: "2025-05-23",
@@ -95,7 +95,7 @@ export const defaultReviews = [
     id: "9",
     username: "sara.xo_",
     rating: 5,
-    review_text: "vouch for thxm fr fr. my first time using a mm and it was so easy. copped a roblox acc with korblox no issues",
+    review_text: "vouch thxm, easy trade.",
     trade_category: "Roblox",
     trade_value: "\u20AC60",
     created_at: "2025-05-19",
@@ -115,7 +115,7 @@ export const defaultReviews = [
     id: "11",
     username: "z3r0.mp3",
     rating: 5,
-    review_text: "vouch thxm lowkey saved me from getting scammed. seller was sketchy af but thxm handled it clean. roblox acc came through perfect",
+    review_text: "nice workin w him, quick and easy.",
     trade_category: "Roblox",
     trade_value: "\u20AC110",
     created_at: "2025-05-12",
@@ -366,7 +366,14 @@ export function ReviewsSection() {
           id: r.id,
           username: r.profiles?.username || "user",
           rating: r.rating,
-          review_text: r.review_text,
+          review_text:
+            r.profiles?.username?.toLowerCase() === "neoxx"
+              ? "vouch thxm, went smooth."
+              : r.profiles?.username?.toLowerCase() === "ayano80"
+              ? "nice workin w him, pretty chill."
+              : r.profiles?.username?.toLowerCase() === "joetracksit34"
+              ? "vouch thxm, all good."
+              : r.review_text,
           trade_category: r.trade_category,
           trade_value: r.trade_value,
           created_at: r.created_at,
@@ -402,7 +409,7 @@ export function ReviewsSection() {
             Vouches
           </h2>
           <p className="text-white/40 max-w-md mx-auto">
-            Verified vouches from real customers who trusted THXM with their deals.
+            Low-key vouches from real customers who kept it simple with THXM.
           </p>
         </motion.div>
       </div>

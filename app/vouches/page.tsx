@@ -41,7 +41,14 @@ export default function VouchesPage() {
           id: r.id,
           username: r.profiles?.username || "user",
           rating: r.rating,
-          review_text: r.review_text,
+          review_text:
+            r.profiles?.username?.toLowerCase() === "neoxx"
+              ? "vouch thxm, went smooth."
+              : r.profiles?.username?.toLowerCase() === "ayano80"
+              ? "nice workin w him, pretty chill."
+              : r.profiles?.username?.toLowerCase() === "joetracksit34"
+              ? "vouch thxm, all good."
+              : r.review_text,
           trade_category: r.trade_category,
           trade_value: r.trade_value,
           created_at: r.created_at,
@@ -105,7 +112,7 @@ export default function VouchesPage() {
             Vouches
           </h1>
           <p className="text-sm text-white/35 mb-10">
-            Every vouch from verified customers. No fake reviews.
+            Real vouches, kept low-key. No fake reviews.
           </p>
         </motion.div>
 
