@@ -100,8 +100,8 @@ export default function VouchesPage() {
               ? "smooth and reliable vouch"
               : r.profiles?.username?.toLowerCase() === "cretimm!!"
               ? "solid legit vouch"
-              : r.profiles?.username?.toLowerCase() === "slipknot113"
-              ? "fast and good"
+              : r.profiles?.username?.toLowerCase() === "lunaisthegoat"
+              ? "Legit and very helpful"
               :
             r.profiles?.username?.toLowerCase() === "neoxx"
               ? "vouch thxm went smooth"
