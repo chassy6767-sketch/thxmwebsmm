@@ -409,10 +409,12 @@ export function ReviewsSection() {
             r.profiles?.username?.toLowerCase() === "neoxx"
               ? "/neovouch.png"
               : r.profiles?.username?.toLowerCase() === "ayano80"
-                ? "/ayanovouch.png"
-                : r.profiles?.username?.toLowerCase() === "joetracksit34"
-                  ? "/joevouch.png"
-                  : undefined,
+              ? "/ayanovouch.png"
+              : r.profiles?.username?.toLowerCase() === "joetracksit34"
+              ? "/joevouch.png"
+              : r.profiles?.username?.toLowerCase() === "snakiesizedendie23"
+              ? "/snacksizedvouch.png"
+              : undefined,
         }));
         setReviews(mapped);
       }
