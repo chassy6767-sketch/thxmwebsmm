@@ -76,6 +76,17 @@ export const defaultReviews = [
   },
   {
     id: "31",
+    username: "Lunaisthegoat",
+    rating: 5,
+    review_text: "Legit and very helpful",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-06-04T01:27:00",
+    is_verified: true,
+    vouch_image: "/lunavouch.png",
+  },
+  {
+    id: "32",
     username: "zaynnth",
     rating: 4,
     review_text: "quick clean vouch",
@@ -86,7 +97,7 @@ export const defaultReviews = [
     vouch_image: "/zythvouch.png",
   },
   {
-    id: "32",
+    id: "33",
     username: "crazyytci",
     rating: 3,
     review_text: "smooth and reliable vouch",
@@ -97,7 +108,7 @@ export const defaultReviews = [
     vouch_image: "/crazticvouch.png",
   },
   {
-    id: "33",
+    id: "34",
     username: "cretimm!!",
     rating: 5,
     review_text: "solid legit vouch",
@@ -108,7 +119,7 @@ export const defaultReviews = [
     vouch_image: "/cretimvouch.png",
   },
   {
-    id: "34",
+    id: "35",
     username: "slipknot113",
     rating: 5,
     review_text: "fast and good",
@@ -529,6 +540,8 @@ export function ReviewsSection() {
               ? "vouch smooth transaction thanks man"
               : r.profiles?.username?.toLowerCase() === "rommiiuwu"
               ? "vouch, legit"
+              : r.profiles?.username?.toLowerCase() === "luna"
+              ? "Legit and very helpful"
               : r.profiles?.username?.toLowerCase() === "zaynnth"
               ? "quick clean vouch"
               : r.profiles?.username?.toLowerCase() === "crazyytci"
@@ -574,6 +587,8 @@ export function ReviewsSection() {
               ? "/joevouch.png"
               : r.profiles?.username?.toLowerCase() === "snakiesizedendie23"
               ? "/snacksizedvouch.png"
+              : r.profiles?.username?.toLowerCase() === "luna"
+                ? "/lunavouch.png"
               : r.profiles?.username?.toLowerCase() === "zaynnth"
                 ? "/zythvouch.png"
               : r.profiles?.username?.toLowerCase() === "crazyytci"
