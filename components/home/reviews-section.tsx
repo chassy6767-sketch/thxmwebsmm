@@ -9,10 +9,21 @@ import Link from "next/link";
 
 export const defaultReviews = [
   {
+    id: "25",
+    username: "snakiesizedendie23",
+    rating: 4,
+    review_text: "vouch",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-06-17",
+    is_verified: false,
+    vouch_image: "/snacksizedvouch.png",
+  },
+  {
     id: "1",
     username: "neoxx",
     rating: 5,
-    review_text: "vouch thxm, went smooth.",
+    review_text: "vouch thxm went smooth",
     trade_category: "Roblox",
     trade_value: "\u20AC85",
     created_at: "2025-06-14",
@@ -23,7 +34,7 @@ export const defaultReviews = [
     id: "2",
     username: "ayano80",
     rating: 5,
-    review_text: "nice workin w him, pretty chill.",
+    review_text: "nice work pretty chill",
     trade_category: "Fortnite",
     trade_value: "\u20AC120",
     created_at: "2025-06-12",
@@ -34,7 +45,7 @@ export const defaultReviews = [
     id: "3",
     username: "joetracksit34",
     rating: 5,
-    review_text: "vouch thxm, all good.",
+    review_text: "vouch thxm all good",
     trade_category: "Fortnite",
     trade_value: "\u20AC200",
     created_at: "2025-06-09",
@@ -45,7 +56,7 @@ export const defaultReviews = [
     id: "4",
     username: "mila.mp4",
     rating: 5,
-    review_text: "nice workin w him, no issues.",
+    review_text: "no issues solid vouch",
     trade_category: "Roblox",
     trade_value: "\u20AC150",
     created_at: "2025-06-06",
@@ -55,7 +66,7 @@ export const defaultReviews = [
     id: "5",
     username: "carlozzz",
     rating: 5,
-    review_text: "vouch thxm, legit.",
+    review_text: "legit vouch recommend",
     trade_category: "Fortnite",
     trade_value: "\u20AC90",
     created_at: "2025-06-03",
@@ -65,7 +76,7 @@ export const defaultReviews = [
     id: "6",
     username: "_renzo.7",
     rating: 4,
-    review_text: "nice workin w him, bit slow but good.",
+    review_text: "bit slow but good",
     trade_category: "Roblox",
     trade_value: "\u20AC180",
     created_at: "2025-05-30",
@@ -75,7 +86,7 @@ export const defaultReviews = [
     id: "7",
     username: "nour.h13",
     rating: 5,
-    review_text: "vouch thxm, no stress.",
+    review_text: "no stress vouch",
     trade_category: "Fortnite",
     trade_value: "\u20AC75",
     created_at: "2025-05-27",
@@ -85,7 +96,7 @@ export const defaultReviews = [
     id: "8",
     username: "jxsh.wav",
     rating: 5,
-    review_text: "nice workin w him, smooth.",
+    review_text: "smooth transaction vouch",
     trade_category: "Fortnite",
     trade_value: "\u20AC320",
     created_at: "2025-05-23",
@@ -95,7 +106,7 @@ export const defaultReviews = [
     id: "9",
     username: "sara.xo_",
     rating: 5,
-    review_text: "vouch thxm, easy trade.",
+    review_text: "easy trade vouch",
     trade_category: "Roblox",
     trade_value: "\u20AC60",
     created_at: "2025-05-19",
@@ -105,7 +116,7 @@ export const defaultReviews = [
     id: "10",
     username: "kenji.9k",
     rating: 5,
-    review_text: "thxm is him. bought a stacked fortnite acc and dude secured the whole thing in like an hour. best \u20AC10 ive ever spent deadass",
+    review_text: "best €10 spent",
     trade_category: "Fortnite",
     trade_value: "\u20AC250",
     created_at: "2025-05-15",
@@ -368,11 +379,27 @@ export function ReviewsSection() {
           rating: r.rating,
           review_text:
             r.profiles?.username?.toLowerCase() === "neoxx"
-              ? "vouch thxm, went smooth."
+              ? "vouch thxm went smooth"
               : r.profiles?.username?.toLowerCase() === "ayano80"
-              ? "nice workin w him, pretty chill."
+              ? "nice work pretty chill"
               : r.profiles?.username?.toLowerCase() === "joetracksit34"
-              ? "vouch thxm, all good."
+              ? "vouch thxm all good"
+              : r.profiles?.username?.toLowerCase() === "snakiesizedendie23"
+              ? "vouch"
+              : r.profiles?.username?.toLowerCase() === "mila.mp4"
+              ? "no issues solid vouch"
+              : r.profiles?.username?.toLowerCase() === "carlozzz"
+              ? "legit vouch recommend"
+              : r.profiles?.username?.toLowerCase() === "_renzo.7"
+              ? "bit slow but good"
+              : r.profiles?.username?.toLowerCase() === "nour.h13"
+              ? "no stress vouch"
+              : r.profiles?.username?.toLowerCase() === "jxsh.wav"
+              ? "smooth transaction vouch"
+              : r.profiles?.username?.toLowerCase() === "sara.xo_"
+              ? "easy trade vouch"
+              : r.profiles?.username?.toLowerCase() === "kenji.9k"
+              ? "best €10 spent"
               : r.review_text,
           trade_category: r.trade_category,
           trade_value: r.trade_value,

@@ -43,11 +43,25 @@ export default function VouchesPage() {
           rating: r.rating,
           review_text:
             r.profiles?.username?.toLowerCase() === "neoxx"
-              ? "vouch thxm, went smooth."
+              ? "vouch thxm went smooth"
               : r.profiles?.username?.toLowerCase() === "ayano80"
-              ? "nice workin w him, pretty chill."
+              ? "nice work pretty chill"
               : r.profiles?.username?.toLowerCase() === "joetracksit34"
-              ? "vouch thxm, all good."
+              ? "vouch thxm all good"
+              : r.profiles?.username?.toLowerCase() === "mila.mp4"
+              ? "no issues solid vouch"
+              : r.profiles?.username?.toLowerCase() === "carlozzz"
+              ? "legit vouch recommend"
+              : r.profiles?.username?.toLowerCase() === "_renzo.7"
+              ? "bit slow but good"
+              : r.profiles?.username?.toLowerCase() === "nour.h13"
+              ? "no stress vouch"
+              : r.profiles?.username?.toLowerCase() === "jxsh.wav"
+              ? "smooth transaction vouch"
+              : r.profiles?.username?.toLowerCase() === "sara.xo_"
+              ? "easy trade vouch"
+              : r.profiles?.username?.toLowerCase() === "kenji.9k"
+              ? "best €10 spent"
               : r.review_text,
           trade_category: r.trade_category,
           trade_value: r.trade_value,
