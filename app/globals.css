@@ -60,6 +60,12 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    background-color: #090807;
+    background-image:
+      radial-gradient(circle at top, rgba(255, 140, 0, 0.08), transparent 30%),
+      radial-gradient(circle at 80% 15%, rgba(255, 140, 0, 0.05), transparent 22%),
+      linear-gradient(180deg, #0c0b0a 0%, #090807 45%, #070605 100%);
+    background-attachment: fixed;
   }
 }
 
@@ -149,6 +155,11 @@ html {
   opacity: 0.03;
   pointer-events: none;
   z-index: 1;
+}
+
+.soft-glow {
+  background:
+    radial-gradient(circle at center, rgba(255, 140, 0, 0.14), rgba(255, 140, 0, 0.04) 45%, transparent 75%);
 }
 
 /* Custom scrollbar */

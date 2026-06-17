@@ -14,26 +14,26 @@ export function HeroSection() {
       {/* Background effects */}
       <MorphingShape
         className="-top-40 -left-40"
-        color="rgba(255,255,255,0.02)"
+        color="rgba(255,140,0,0.05)"
         size={600}
       />
       <MorphingShape
         className="bottom-0 right-0"
-        color="rgba(255,255,255,0.015)"
+        color="rgba(255,140,0,0.035)"
         size={500}
         delay={2}
       />
       <GradientOrb
         className="top-1/4 left-1/4 w-[300px] h-[300px]"
-        colors={["rgba(40,40,40,0.5)", "rgba(20,20,20,0.3)", "transparent"]}
+        colors={["rgba(255,140,0,0.12)", "rgba(255,140,0,0.05)", "transparent"]}
       />
       <GradientOrb
         className="bottom-1/4 right-1/4 w-[400px] h-[400px]"
-        colors={["rgba(30,30,30,0.4)", "rgba(15,15,15,0.2)", "transparent"]}
+        colors={["rgba(255,140,0,0.08)", "rgba(255,140,0,0.03)", "transparent"]}
       />
 
       {/* Grid lines */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:64px_64px]" />
 
       {/* Floating dots */}
       {[...Array(20)].map((_, i) => (
@@ -139,7 +139,7 @@ export function HeroSection() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#050505] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#070605] to-transparent" />
     </section>
   );
 }
