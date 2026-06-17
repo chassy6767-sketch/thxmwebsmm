@@ -264,41 +264,13 @@ export const defaultReviews = [
   },
 ];
 
-const mixedReviewOrder = [
-  "snakiesizedendie23",
-  "carlozzz",
-  "neoxx",
-  "4li._",
-  "ayano80",
-  "ronxo_",
-  "joetracksit34",
-  "mila.mp4",
-  "z3r0.mp3",
-  "nour.h13",
-  "jxsh.wav",
-  "sara.xo_",
-  "kenji.9k",
-  "_renzo.7",
-  "amira._x",
-  "tino_rbx",
-  "kyra.wav",
-  "r4vi.x",
-  "leah.hpp",
-  "omar.2k7",
-  "nxsha.a",
-  "dev.rbx_",
-  "jaz.wavv",
-  "kai.ftw",
-  "mehlss",
-];
-
-function mixReviews<T extends { username: string }>(items: T[]) {
-  const order = new Map(mixedReviewOrder.map((username, index) => [username, index]));
-  return [...items].sort((left, right) => {
-    const leftIndex = order.get(left.username.toLowerCase()) ?? 999;
-    const rightIndex = order.get(right.username.toLowerCase()) ?? 999;
-    return leftIndex - rightIndex;
-  });
+function shuffle<T>(items: T[]) {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 function cacheBustAsset(src?: string | null) {
@@ -402,7 +374,7 @@ function ReviewCard({
 }
 
 export function ReviewsSection() {
-  const [reviews, setReviews] = useState(defaultReviews);
+  const [reviews, setReviews] = useState(() => shuffle(defaultReviews));
   const scrollRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(scrollRef, { once: true });
 
@@ -458,7 +430,7 @@ export function ReviewsSection() {
               ? "/snacksizedvouch.png"
               : undefined,
         }));
-        setReviews(mixReviews(mapped));
+        setReviews(shuffle(mapped));
       }
     };
     fetchReviews();

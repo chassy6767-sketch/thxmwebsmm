@@ -23,41 +23,13 @@ type Vouch = {
 
 const categories = ["All", "Roblox", "Fortnite"];
 
-const mixedVouchOrder = [
-  "snakiesizedendie23",
-  "carlozzz",
-  "neoxx",
-  "4li._",
-  "ayano80",
-  "ronxo_",
-  "joetracksit34",
-  "mila.mp4",
-  "z3r0.mp3",
-  "nour.h13",
-  "jxsh.wav",
-  "sara.xo_",
-  "kenji.9k",
-  "_renzo.7",
-  "amira._x",
-  "tino_rbx",
-  "kyra.wav",
-  "r4vi.x",
-  "leah.hpp",
-  "omar.2k7",
-  "nxsha.a",
-  "dev.rbx_",
-  "jaz.wavv",
-  "kai.ftw",
-  "mehlss",
-];
-
-function mixVouches<T extends { username: string }>(items: T[]) {
-  const order = new Map(mixedVouchOrder.map((username, index) => [username, index]));
-  return [...items].sort((left, right) => {
-    const leftIndex = order.get(left.username.toLowerCase()) ?? 999;
-    const rightIndex = order.get(right.username.toLowerCase()) ?? 999;
-    return leftIndex - rightIndex;
-  });
+function shuffle<T>(items: T[]) {
+  const a = [...items];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 function cacheBustAsset(src?: string | null) {
@@ -66,7 +38,7 @@ function cacheBustAsset(src?: string | null) {
 }
 
 export default function VouchesPage() {
-  const [vouches, setVouches] = useState<Vouch[]>(defaultReviews);
+  const [vouches, setVouches] = useState<Vouch[]>(() => shuffle(defaultReviews));
   const [filter, setFilter] = useState("All");
   const [search, setSearch] = useState("");
   const ref = useRef<HTMLDivElement>(null);
@@ -118,7 +90,7 @@ export default function VouchesPage() {
                   ? "/joevouch.png"
                   : undefined,
         }));
-        setVouches(mixVouches(mapped));
+        setVouches(shuffle(mapped));
       }
     };
     fetchVouches();
