@@ -23,10 +23,23 @@ type Vouch = {
 
 const categories = ["All", "Roblox", "Fortnite"];
 
-function shuffle<T>(items: T[]) {
+function createSeededRandom(seed: string) {
+  let state = 0;
+  for (let i = 0; i < seed.length; i++) {
+    state = (state * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+
+  return () => {
+    state = (state * 1664525 + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
+function shuffle<T>(items: T[], seed = "thxm-vouches-20260617") {
   const a = [...items];
+  const random = createSeededRandom(seed);
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
@@ -54,7 +67,22 @@ export default function VouchesPage() {
         const mapped = data.map((r: any) => ({
           id: r.id,
           username: r.profiles?.username || "user",
-          rating: r.rating,
+          rating:
+            r.profiles?.username?.toLowerCase() === "daylightss"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "raketss283"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "bokemonji11"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "joshuaaxx"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "rommiiuwu"
+              ? 3
+              : r.profiles?.username?.toLowerCase() === "zaynnth"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "crazyytci"
+              ? 3
+              : r.rating,
           review_text:
             r.profiles?.username?.toLowerCase() === "daylightss"
               ? "vouch — fast, friendly, secure, highly recommend"

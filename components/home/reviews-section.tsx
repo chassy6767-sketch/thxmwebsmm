@@ -22,7 +22,7 @@ export const defaultReviews = [
   {
     id: "26",
     username: "daylightss",
-    rating: 5,
+    rating: 4,
     review_text: "vouch — fast, friendly, secure, highly recommend",
     trade_category: null,
     trade_value: null,
@@ -33,7 +33,7 @@ export const defaultReviews = [
   {
     id: "27",
     username: "raketss283",
-    rating: 5,
+    rating: 4,
     review_text: "vouch smooth trade very reliable",
     trade_category: null,
     trade_value: null,
@@ -44,7 +44,7 @@ export const defaultReviews = [
   {
     id: "28",
     username: "bokemonji11",
-    rating: 5,
+    rating: 4,
     review_text: "vouch quick and safe",
     trade_category: null,
     trade_value: null,
@@ -55,7 +55,7 @@ export const defaultReviews = [
   {
     id: "29",
     username: "joshuaaxx",
-    rating: 5,
+    rating: 4,
     review_text: "vouch smooth transaction thanks man",
     trade_category: null,
     trade_value: null,
@@ -66,7 +66,7 @@ export const defaultReviews = [
   {
     id: "30",
     username: "rommiiuwu",
-    rating: 5,
+    rating: 3,
     review_text: "vouch, legit",
     trade_category: null,
     trade_value: null,
@@ -77,7 +77,7 @@ export const defaultReviews = [
   {
     id: "31",
     username: "zaynnth",
-    rating: 5,
+    rating: 4,
     review_text: "quick clean vouch",
     trade_category: null,
     trade_value: null,
@@ -88,7 +88,7 @@ export const defaultReviews = [
   {
     id: "32",
     username: "crazyytci",
-    rating: 5,
+    rating: 3,
     review_text: "smooth and reliable vouch",
     trade_category: null,
     trade_value: null,
@@ -363,10 +363,23 @@ export const defaultReviews = [
   },
 ];
 
-function shuffle<T>(items: T[]) {
+function createSeededRandom(seed: string) {
+  let state = 0;
+  for (let i = 0; i < seed.length; i++) {
+    state = (state * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+
+  return () => {
+    state = (state * 1664525 + 1013904223) >>> 0;
+    return state / 4294967296;
+  };
+}
+
+function shuffle<T>(items: T[], seed = "thxm-reviews-20260617") {
   const a = [...items];
+  const random = createSeededRandom(seed);
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
@@ -489,7 +502,22 @@ export function ReviewsSection() {
         const mapped = data.map((r: any) => ({
           id: r.id,
           username: r.profiles?.username || "user",
-          rating: r.rating,
+          rating:
+            r.profiles?.username?.toLowerCase() === "daylightss"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "raketss283"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "bokemonji11"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "joshuaaxx"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "rommiiuwu"
+              ? 3
+              : r.profiles?.username?.toLowerCase() === "zaynnth"
+              ? 4
+              : r.profiles?.username?.toLowerCase() === "crazyytci"
+              ? 3
+              : r.rating,
           review_text:
             r.profiles?.username?.toLowerCase() === "daylightss"
               ? "vouch — fast, friendly, secure, highly recommend"
