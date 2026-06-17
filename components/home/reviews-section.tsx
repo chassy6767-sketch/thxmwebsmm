@@ -75,6 +75,50 @@ export const defaultReviews = [
     vouch_image: "/romsivouch.png",
   },
   {
+    id: "31",
+    username: "zaynnth",
+    rating: 5,
+    review_text: "quick clean vouch",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-23",
+    is_verified: true,
+    vouch_image: "/zythvouch.png",
+  },
+  {
+    id: "32",
+    username: "crazyytci",
+    rating: 5,
+    review_text: "smooth and reliable vouch",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-24",
+    is_verified: true,
+    vouch_image: "/crazticvouch.png",
+  },
+  {
+    id: "33",
+    username: "cretimm!!",
+    rating: 5,
+    review_text: "solid legit vouch",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-21",
+    is_verified: true,
+    vouch_image: "/cretimvouch.png",
+  },
+  {
+    id: "34",
+    username: "slipknot113",
+    rating: 5,
+    review_text: "fast and good",
+    trade_category: null,
+    trade_value: null,
+    created_at: "2026-05-25",
+    is_verified: true,
+    vouch_image: "/slipknot114.png",
+  },
+  {
     id: "1",
     username: "neoxx",
     rating: 5,
@@ -457,6 +501,14 @@ export function ReviewsSection() {
               ? "vouch smooth transaction thanks man"
               : r.profiles?.username?.toLowerCase() === "rommiiuwu"
               ? "vouch, legit"
+              : r.profiles?.username?.toLowerCase() === "zaynnth"
+              ? "quick clean vouch"
+              : r.profiles?.username?.toLowerCase() === "crazyytci"
+              ? "smooth and reliable vouch"
+              : r.profiles?.username?.toLowerCase() === "cretimm!!"
+              ? "solid legit vouch"
+              : r.profiles?.username?.toLowerCase() === "slipknot113"
+              ? "fast and good"
               :
             r.profiles?.username?.toLowerCase() === "neoxx"
               ? "vouch thxm went smooth"
@@ -494,6 +546,14 @@ export function ReviewsSection() {
               ? "/joevouch.png"
               : r.profiles?.username?.toLowerCase() === "snakiesizedendie23"
               ? "/snacksizedvouch.png"
+              : r.profiles?.username?.toLowerCase() === "zaynnth"
+                ? "/zythvouch.png"
+              : r.profiles?.username?.toLowerCase() === "crazyytci"
+                ? "/crazticvouch.png"
+              : r.profiles?.username?.toLowerCase() === "cretimm!!"
+                ? "/cretimvouch.png"
+              : r.profiles?.username?.toLowerCase() === "slipknot113"
+                ? "/slipknot114.png"
               : undefined,
         }));
         setReviews(shuffle(mapped));

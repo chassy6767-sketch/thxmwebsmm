@@ -66,6 +66,14 @@ export default function VouchesPage() {
               ? "vouch smooth transaction thanks man"
               : r.profiles?.username?.toLowerCase() === "rommiiuwu"
               ? "vouch, legit"
+              : r.profiles?.username?.toLowerCase() === "zaynnth"
+              ? "quick clean vouch"
+              : r.profiles?.username?.toLowerCase() === "crazyytci"
+              ? "smooth and reliable vouch"
+              : r.profiles?.username?.toLowerCase() === "cretimm!!"
+              ? "solid legit vouch"
+              : r.profiles?.username?.toLowerCase() === "slipknot113"
+              ? "fast and good"
               :
             r.profiles?.username?.toLowerCase() === "neoxx"
               ? "vouch thxm went smooth"
@@ -109,6 +117,14 @@ export default function VouchesPage() {
                           ? "/jxshvouch.png"
                           : r.profiles?.username?.toLowerCase() === "rommiiuwu"
                             ? "/romsivouch.png"
+                            : r.profiles?.username?.toLowerCase() === "zaynnth"
+                              ? "/zythvouch.png"
+                            : r.profiles?.username?.toLowerCase() === "crazyytci"
+                              ? "/crazticvouch.png"
+                            : r.profiles?.username?.toLowerCase() === "cretimm!!"
+                              ? "/cretimvouch.png"
+                            : r.profiles?.username?.toLowerCase() === "slipknot113"
+                              ? "/slipknot114.png"
                             : undefined,
         }));
         setVouches(shuffle(mapped));
