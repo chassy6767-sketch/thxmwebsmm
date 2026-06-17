@@ -3,7 +3,71 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+function createNoopQuery() {
+  const chain: any = new Proxy(function () {}, {
+    get(target, prop) {
+      if (prop === "then") {
+        return (resolve: (value: { data: null; error: null; count: null }) => void) =>
+          resolve({ data: null, error: null, count: null });
+      }
+
+      if (prop === "catch" || prop === "finally") {
+        return () => chain;
+      }
+
+      return chain;
+    },
+    apply() {
+      return chain;
+    },
+  });
+
+  return chain;
+}
+
+function createNoopSupabaseClient() {
+  return {
+    auth: {
+      getSession: async () => ({ data: { session: null }, error: null }),
+      getUser: async () => ({ data: { user: null }, error: null }),
+      signInWithPassword: async () => ({ data: { user: null, session: null }, error: null }),
+      signUp: async () => ({ data: { user: null, session: null }, error: null }),
+      signOut: async () => ({ error: null }),
+      resetPasswordForEmail: async () => ({ error: null }),
+      onAuthStateChange: () => ({
+        data: {
+          subscription: {
+            unsubscribe() {},
+          },
+        },
+      }),
+    },
+    from: () => createNoopQuery(),
+    rpc: async () => ({ data: null, error: null }),
+    storage: {
+      from: () => ({
+        upload: async () => ({ data: null, error: null }),
+        remove: async () => ({ data: null, error: null }),
+        getPublicUrl: () => ({ data: { publicUrl: "" } }),
+      }),
+    },
+    channel: () => ({
+      on() {
+        return this;
+      },
+      subscribe() {
+        return this;
+      },
+      unsubscribe() {
+        return Promise.resolve();
+      },
+    }),
+    removeChannel: async () => undefined,
+  } as const;
+}
+
+export const supabase =
+  supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : createNoopSupabaseClient();
 
 export type Profile = {
   id: string;

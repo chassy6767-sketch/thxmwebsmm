@@ -3,39 +3,43 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import { Star, BadgeCheck, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { supabase, type Review } from "@/lib/supabase";
 import Link from "next/link";
 
 export const defaultReviews = [
   {
     id: "1",
-    username: "dylan.2k",
+    username: "neoxx",
     rating: 5,
     review_text: "vouch for thxm, went smooth no cap. bought a roblox acc and bro held it down fr",
     trade_category: "Roblox",
     trade_value: "\u20AC85",
     created_at: "2025-06-14",
     is_verified: true,
+    vouch_image: "/neovouch.png",
   },
   {
     id: "2",
-    username: "lxna._",
+    username: "ayano80",
     rating: 5,
     review_text: "thxm goat vouch. was skeptical at first but dude came through clean. already used him 3 times lol",
     trade_category: "Fortnite",
     trade_value: "\u20AC120",
     created_at: "2025-06-12",
     is_verified: true,
+    vouch_image: "/ayanovouch.png",
   },
   {
     id: "3",
-    username: "yusuf_xo",
+    username: "joetracksit34",
     rating: 5,
     review_text: "big vouch. sold my og fortnite acc through thxm and everything was legit. fast responses too no waiting around",
     trade_category: "Fortnite",
     trade_value: "\u20AC200",
     created_at: "2025-06-09",
     is_verified: true,
+    vouch_image: "/joevouch.png",
   },
   {
     id: "4",
@@ -261,6 +265,7 @@ function ReviewCard({
     trade_value?: string | null;
     created_at: string;
     is_verified?: boolean;
+    vouch_image?: string | null;
   };
 }) {
   return (
@@ -268,12 +273,12 @@ function ReviewCard({
       className="flex-shrink-0 w-[320px] md:w-[360px] p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500"
       whileHover={{ y: -4 }}
     >
-      <div className="flex items-center justify-between mb-4">
-        <div className="flex items-center gap-3">
+      <div className="flex items-start justify-between gap-4 mb-4">
+        <div className="flex items-start gap-3 min-w-0 flex-1">
           <div className="w-9 h-9 rounded-full bg-white/[0.08] flex items-center justify-center text-sm font-semibold text-white/60">
             {review.username.charAt(0).toUpperCase()}
           </div>
-          <div>
+          <div className="min-w-0 flex-1">
             <div className="flex items-center gap-1.5">
               <span className="text-sm font-medium">{review.username}</span>
               {review.is_verified && (
@@ -287,9 +292,27 @@ function ReviewCard({
                 year: "numeric",
               })}
             </span>
+            {review.vouch_image && (
+              <Link
+                href={review.vouch_image}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 block w-full max-w-[220px] overflow-hidden rounded-xl border border-white/[0.06] bg-black/20 transition-transform hover:scale-[1.01]"
+                aria-label={`Open ${review.username} vouch image`}
+              >
+                <Image
+                  src={review.vouch_image}
+                  alt={`${review.username} vouch`}
+                  width={640}
+                  height={360}
+                  className="h-auto w-full object-cover"
+                  sizes="(max-width: 768px) 70vw, 220px"
+                />
+              </Link>
+            )}
           </div>
         </div>
-        <div className="flex items-center gap-0.5">
+        <div className="flex items-center gap-0.5 shrink-0 pt-0.5">
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
@@ -348,6 +371,14 @@ export function ReviewsSection() {
           trade_value: r.trade_value,
           created_at: r.created_at,
           is_verified: r.profiles?.is_verified_customer || false,
+          vouch_image:
+            r.profiles?.username?.toLowerCase() === "neoxx"
+              ? "/neovouch.png"
+              : r.profiles?.username?.toLowerCase() === "ayano80"
+                ? "/ayanovouch.png"
+                : r.profiles?.username?.toLowerCase() === "joetracksit34"
+                  ? "/joevouch.png"
+                  : undefined,
         }));
         setReviews(mapped);
       }
